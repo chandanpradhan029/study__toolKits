@@ -27,8 +27,8 @@ SECRET_KEY = 'django-insecure-u^yxhsj4@@wgu0be*amt-s(g5d1rj8f&o1u))bzw=7js5q)vo*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["studytoolkits.herokuapp.com"]
-CSRF_TRUSTED_ORIGINS = ['https://studytoolkits.herokuapp.com/']
+ALLOWED_HOSTS = ['studytoolkits.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://studytoolkits.herokuapp.com']
 
 
 # Application definition
