@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': 'student_kit',  
         'USER': 'root',  
         'PASSWORD': 'Root',  
-        'HOST': 'db',  
+        'HOST': '127.0.0.1:3306',  
         'PORT': '3306',  
         'OPTIONS': {  
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'" 
