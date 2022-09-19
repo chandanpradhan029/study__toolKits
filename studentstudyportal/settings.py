@@ -22,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-u^yxhsj4@@wgu0be*amt-s(g5d1rj8f&o1u))bzw=7js5q)vo*'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["studytoolkits.herokuapp.com"]
+ALLOWED_HOSTS = ["student-tool-kit.herokuapp.com","localhost"]
 
 
 # Application definition
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -79,17 +80,10 @@ WSGI_APPLICATION = 'studentstudyportal.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',  
-        'NAME': 'student_kit',  
-        'USER': 'root',  
-        'PASSWORD': 'Root',  
-        'HOST': '127.0.0.1',  
-        'PORT': '3306',  
-        'OPTIONS': {  
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'" 
+   'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
-}
 }
 
 
@@ -135,6 +129,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 #STATICFILES_DIRS =[BASE_DIR/"static"]
@@ -142,7 +137,6 @@ STATIC_ROOT = BASE_DIR / 'static'
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
 CRISPY_TEMPLATE_PACK = "bootstrap4"
-
 
 
 #EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -155,7 +149,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
-EMAIL_HOST_USER = "chandanpradhan0299@gmail.com"
-EMAIL_HOST_PASSWORD = 'lzwgxgkofxbbcbmb'
+EMAIL_HOST_USER = "pelabawa@gmail.com"
+EMAIL_HOST_PASSWORD = 'ogdvrtogwsrrvgou'
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = "chandanpradhan0299@gmail.com"
+DEFAULT_FROM_EMAIL = "pelabawa@gmail.com"
